@@ -7,13 +7,13 @@
         <div class="form-group">
             <i class="fas fa-user"></i>
             <!-- <input type="text" name="admin" placeholder="Usuario"><br> -->
-            <input type="email" name="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid':''; ?>" placeholder="Su correo electrónico" value="<?php echo $data['email'];?>"><br>
-            <span class="invalid-feedback"><?php echo $data['email_err'];?></span>
+            <input type="email" name="email" class="form-control <?php echo ( !empty( $data['email_err'] ) ) ? 'is-invalid':''; ?>" placeholder="Su correo electrónico" value="<?php echo  !empty( $data['email'] ) ?  $data['email']: '';?>"><br>
+            <span class="invalid-feedback"><?php echo !empty( $data['email_err'] ) ? $data['email_err'] : '' ;?></span>
         </div><br>
         <div class="form-group">
             <i class="fas fa-key"></i>
-            <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid':''; ?>" placeholder="Su contraseña" value="<?php echo $data['password'];?>"><br>
-            <span class="invalid-feedback"><?php echo $data['password_err'];?></span>
+            <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid':''; ?>" placeholder="Su contraseña" value="<?php echo !empty( $data['password'] ) ? $data['password'] : '' ;?>"><br>
+            <span class="invalid-feedback"><?php echo !empty( $data['password_err'] ) ? $data['password_err'] : '';?></span>
         </div><br>
 
         <br><button type="submit"> Entrar </button><br><br>
