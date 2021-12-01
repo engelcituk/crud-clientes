@@ -11,7 +11,6 @@ class Clientes extends Controller {
     }
     public function index(){
         //obtengo los clients
-
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //sanitizamos los datos que vienen por POST
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

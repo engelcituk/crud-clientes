@@ -15,7 +15,7 @@ class Cliente {
         return $results;
     }
 
-    // encontrar usuario por su email
+    // encontrar usuario por su termino de busqueda
     public function getClientesByLike($data){
         
         $this->db->query('SELECT * FROM clientes WHERE nombre LIKE :keywords OR localidad LIKE :keywords OR ip LIKE :keywords');
