@@ -15,6 +15,18 @@ class Cliente {
         return $results;
     }
 
+    // encontrar usuario por su email
+    public function getClientesByLike($data){
+        
+        $this->db->query('SELECT * FROM clientes WHERE nombre LIKE :keywords OR localidad LIKE :keywords OR ip LIKE :keywords');
+        //enlazo parametro
+        $this->db->bind(':keywords', '%'.$data['buscar'].'%' );
+        
+        $results = $this->db->resultSet();
+
+        return $results;
+    }
+
     public function addCliente($data){
         $this->db->query('INSERT INTO clientes (nombre, localidad, ip, ip_pass, megas, precio, fecha) VALUES (:nombre, :localidad, :ip, :ip_pass, :megas, :precio, :fecha)');
         // enlazamos parametros

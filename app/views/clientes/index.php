@@ -17,7 +17,7 @@
         <?php require APPROOT . '/views/clientes/edit.php'; ?>
 
         <div class="col-md-0 my-2">
-            <form action="clientes.php" class="form-inline justify-content-end" method="POST">
+            <form action="<?php echo URLROOT . '/clientes'; ?>"class="form-inline justify-content-end" method="POST">
                 <label class="mr-2" for="">Buscar:</label><input class="form-control mr-sm-2" type="search" id="buscar" name="buscar" placeholder="Caracter a buscar...">
                 <button><i class="fas fa-search"></i></button>
             </form>
